@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useContext } from "react";
 
 const MyContext = React.createContext();
 
-const User = () => (
-  <div>
-    <MyContext.Consumer>
-      {context => <p> User name: {context.name}</p>}
-    </MyContext.Consumer>
-  </div>
-);
+
+const User = () => {
+  const context = useContext(MyContext);
+
+  return <div>{<p> User name: {context.name}</p>}</div>;
+};
+
 
 const Users = () => (
   <div>
