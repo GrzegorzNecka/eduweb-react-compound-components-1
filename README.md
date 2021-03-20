@@ -1,3 +1,1 @@
-# eduweb-react-compound-components-1
-
-[Edit on StackBlitz ⚡️](https://stackblitz.com/edit/eduweb-react-compound-components-1)
+https://github.com/eduwebpl/kurs-react-techniki-zaawansowane/tree/03/03/src/views
