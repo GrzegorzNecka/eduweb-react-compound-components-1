@@ -1,24 +1,26 @@
 import React, { useState, useContext } from "react";
 
-const WizardContext = React.createContext({
-  currentPage: 1,
-  changePage: () => {}
-});
-
 const Page = ({ children }) => {
   return <div>{children}</div>;
 };
 
 const Controls = () => {
-  const context = useContext(WizardContext);
+  const { changePage, currentPage } = useContext(WizardContext);
   return (
     <div>
-      <button onClick={}>Previous</button>
+      <button onClick={() => changePage(currentPage - 1)}>Previous</button>
       <button>Next</button>
       <button>Submit</button>
     </div>
   );
 };
+
+// ----------------------------------------------------------
+
+const WizardContext = React.createContext({
+  currentPage: 1,
+  changePage: () => {}
+});
 
 const Wizard = ({ children }) => {
   const [currentPage, setCurrentPage] = useState();
