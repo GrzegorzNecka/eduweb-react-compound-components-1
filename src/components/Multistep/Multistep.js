@@ -10,7 +10,7 @@ const Page = ({ children }) => {
 };
 
 const Controls = () => {
-  const context = useContext(WizardContext)
+  const context = useContext(WizardContext);
   return (
     <div>
       <button onClick={}>Previous</button>
