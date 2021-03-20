@@ -29,8 +29,10 @@ const WizardContext = React.createContext({
   changePage: () => {}
 });
 
+// -----
+
 const Wizard = ({ children }) => {
-  const [currentPage, setCurrentPage] = useState();
+  const [currentPage, setCurrentPage] = useState(1);
 
   const changePage = newPageIndex => {
     setCurrentPage(newPageIndex);
