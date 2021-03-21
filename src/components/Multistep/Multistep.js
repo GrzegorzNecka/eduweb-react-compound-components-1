@@ -47,7 +47,7 @@ const ProgressBar = () => {
   };
 
   const innerProgressBarStyle = {
-    width: "100%",
+    width: `${(currentPage / pageIndexes.length) * 100}%`,
     height: "20px",
     background: "blue"
   };
