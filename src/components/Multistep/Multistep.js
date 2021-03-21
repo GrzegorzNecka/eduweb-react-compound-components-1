@@ -37,6 +37,28 @@ const Controls = () => {
   );
 };
 
+const ProgressBar = () => {
+  const { currentPage, pageIndexes } = useContext(WizardContext);
+
+  const outerProgressBarStyle = {
+    width: "100%",
+    height: "20px",
+    background: "grey"
+  };
+
+  const innerProgressBarStyle = {
+    width: "100%",
+    height: "20px",
+    background: "blue"
+  };
+
+  return (
+    <div style={outerProgressBarStyle}>
+      <div style={innerProgressBarStyle} />
+    </div>
+  );
+};
+
 // ----------------------------------------------------------
 
 const WizardContext = React.createContext({
@@ -46,8 +68,10 @@ const WizardContext = React.createContext({
   updatePageIndexes: () => {}
 });
 
-// pageIndexes: i updatePageIndexes - służy do zliczania liczby stron
-// -----
+/*
+    pageIndexes: i updatePageIndexes - 
+		służy do zliczania liczby stron	   
+  */
 
 const Wizard = ({ children }) => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -56,7 +80,6 @@ const Wizard = ({ children }) => {
     setCurrentPage(newPageIndex);
   };
 
-  // pageIndexes: i updatePageIndexes - służy do zliczania liczby stron
   const [pageIndexes, setPageIndexes] = useState([]);
 
   const updatePageIndexes = pageIndex => {
@@ -82,9 +105,8 @@ const Wizard = ({ children }) => {
       }}
     >
       {children}
-      {/*<p> {totalPageNumber}</p>*/}
     </WizardContext.Provider>
   );
 };
 
-export { Wizard, Page, Controls };
+export { ProgressBar, Wizard, Page, Controls };
