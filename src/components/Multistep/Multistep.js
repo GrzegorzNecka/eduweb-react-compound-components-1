@@ -50,7 +50,7 @@ const ProgressBar = () => {
     width: "100%",
     height: "20px",
     background: "blue",
-    transition: "transform .5s ease-out",
+    transition: "transform .1s ease-out",
     transform: `scaleX(${currentPage / pageIndexes.length})`,
     transformOrigin: "0% 50%"
   };
